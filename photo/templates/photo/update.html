@@ -7,6 +7,7 @@
         <form action="" method="post" enctype="multipart/form-data">
             {{form.as_p}}
             {% csrf_token %}
+            <a href="{% url 'photo:photo_detail' pk=object.id %}" class="btn btn-secondary">Delete</a>
             <input type="submit" class="btn btn-primary" value="Update">
         </form>
 </div>
