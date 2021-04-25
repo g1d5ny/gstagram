@@ -10,7 +10,8 @@
             {{post.author.username}}
         </button>
         <a href="{% url 'photo:photo_detail' pk=post.id %}"><p><br><img src="{{post.photo.url}}"
-                                                                        style="width: 300px; height: 300px;"></p></a>
+                                                                        style="width: 300px; height: 300px;"></p>
+        </a>
         <p>{{post.text|linebreaksbr}}</p>
     </div>
     <div class=" col-md-2"></div>
