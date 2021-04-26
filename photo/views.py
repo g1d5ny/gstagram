@@ -8,17 +8,17 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-@login_required
-def photo_list(request):
-    photos = Photo.objects.all()
-    return render(request, 'photo/list.html', {'photos': photos})
+# @login_required
+# def photo_list(request):
+#     photos = Photo.objects.all()
+#     return render(request, 'photo/list.html', {'photos': photos})
 
-# class PhotoListView(LoginRequiredMixin, ListView):
-#     model = Photo
-#     template_name = 'photo/list.html'
-#
-#     def get_queryset(self):
-#         return Photo.objects.all()
+class PhotoListView(ListView):
+    # model = Photo
+    template_name = 'photo/list.html'
+    queryset = Photo.objects.all()
+    # def get_queryset(self):
+    #     return Photo.objects.all()
 
 
 class PhotoDetailView(LoginRequiredMixin, DetailView):
